@@ -90,6 +90,21 @@ void agregarTarea(vector<Tarea>& tareas){
 }
 
 // Marca una tarea como completada
-// void completarTarea(vector<Tarea>& tareas) {
-// 
-// }
+void completarTarea(vector<Tarea>& tareas) {
+    // imprimir tareas
+    mostrarTareas(tareas);
+    
+    //cambiar tarea.completada a true
+    //# de tarea a completar?
+    int numeroTarea;
+    cout << "Seleccione la tarea completada: ";
+    cin >> numeroTarea;
+    
+    if (numeroTarea < 1 or numeroTarea > tareas.size()){
+        cout << "Tarea invalida";
+        return;
+    }
+    
+    tareas[numeroTarea - 1].completada = true;
+    cout << "Tarea completada correctamente" << endl;
+}
